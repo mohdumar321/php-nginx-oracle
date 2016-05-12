@@ -1,0 +1,3 @@
+- php5 + nginx
+- Oracle
+- Xdebugger
