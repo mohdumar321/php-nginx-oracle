@@ -110,5 +110,5 @@ RUN yes | pecl install xdebug \
 RUN ln -s /etc/php5/mods-available/xdebug.ini /etc/php5/fpm/conf.d
 
 #RUN export XDEBUG_CONFIG="remote_host={{YOUR_IP_ADDRESS}}
-#echo "xdebug.remote_host=$XDEBUG_CONFIG" >> /etc/php5/mods-available/xdebug.ini
+#echo "$XDEBUG_CONFIG" >> /etc/php5/mods-available/xdebug.ini
 CMD ["/bin/bash", "/start.sh"]
