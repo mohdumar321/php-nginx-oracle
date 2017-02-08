@@ -1,17 +1,6 @@
 FROM ubuntu:14.04.4
 MAINTAINER Umar
 
-
-LABEL \
-      # Location of the STI scripts inside the image.
-      io.openshift.s2i.scripts-url=image:///usr/libexec/s2i
-
-ENV \
-    # Path to be used in other layers to place s2i scripts into
-    STI_SCRIPTS_PATH=/usr/libexec/s2i \
-    # The $HOME is not set by default, but some applications needs this variable
-    HOME=/opt/app-root/src \
-    PATH=/opt/app-root/src/bin:/opt/app-root/bin:$PATH
 # Surpress Upstart errors/warning
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -sf /bin/true /sbin/initctl
